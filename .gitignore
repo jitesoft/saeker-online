@@ -1,0 +1,5 @@
+.idea/
+dist/*
+!dist/CNAME
+!dist/og-img.png
+node_modules/
