@@ -1,21 +1,23 @@
-<% const twitter = htmlWebpackPlugin.options.twitter %>
-<% const og      = htmlWebpackPlugin.options.og %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
-    <% if (og) { %>
+    <% if (htmlWebpackPlugin.options.og) {
+            const og = htmlWebpackPlugin.options.og
+    %>
     <meta property="og:title" content="<%=        og.title %>">
     <meta property="og:description" content="<%=  og.description %>">
     <meta property="og:image" content="<%=        og.url %>/<%= og.image %>">
     <meta property="og:url" content="<%=          og.url %>">
-    <% } if (twitter) { %>
+    <% } if (htmlWebpackPlugin.options.twitter) {
+            const twitter = htmlWebpackPlugin.options.twitter
+    %>
     <meta name="twitter:title" content="<%=       twitter.title %>">
     <meta name="twitter:description" content="<%= twitter.description %>">
-    <meta name="twitter:image" content="<%=       og.url%><%= twitter.image %>">
+    <meta name="twitter:image" content="<%=       twitter.url%>/<%= twitter.image %>">
     <meta name="twitter:card" content="<%=        twitter.card %>">
     <% } %>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
