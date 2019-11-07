@@ -1,3 +1,4 @@
 .idea/
-dist/
+dist/*
+!dist/CNAME
 node_modules/
