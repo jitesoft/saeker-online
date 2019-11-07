@@ -3,8 +3,8 @@
     "description": "Webpage - Säker online",
     "private": true,
     "main": "src/index.js",
-    "dependencies": {},
     "devDependencies": {
+        "image-webpack-loader": "^6.0.0",
         "@jitesoft/eslint-config": "^1.7.2",
         "@jitesoft/babel-preset-main": "^1.7.3",
         "eslint-plugin-vue": "^5.2.3",
@@ -44,7 +44,7 @@
         "title": "Säker Online",
         "template": "src/html/index.tmpl.html",
         "og": {
-            "image": "og-img.png",
+            "image": "img/og-image.png",
             "description": "En sida om säkerhet på nätet.",
             "title": "Säker Online",
             "url": "https://säker.online"
@@ -52,7 +52,7 @@
         "twitter": {
             "url": "https://säker.online",
             "card": "summary_large_image",
-            "image": "og-img.png",
+            "image": "img/og-image.png",
             "description": "En sida om säkerhet på nätet.",
             "title": "Säker Online"
         },

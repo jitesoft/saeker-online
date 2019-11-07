@@ -89,7 +89,8 @@ let conf = {
               outputPath: 'img',
               name: '[name].[ext]'
             }
-          }
+          },
+          'image-webpack-loader'
         ]
       },
       {
@@ -102,7 +103,8 @@ let conf = {
               fallback: 'file-loader',
               outputPath: 'img'
             }
-          }
+          },
+          'image-webpack-loader'
         ]
       }
     ]
