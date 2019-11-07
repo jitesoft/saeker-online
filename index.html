@@ -1,23 +1,23 @@
-<% const twitter = htmlWebpackPlugin.options.twitter %>
-<% const og      = htmlWebpackPlugin.options.og %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
-    <% if (og) { %>
-    <meta property="og:title" content="<%=        og.title %>">
-    <meta property="og:description" content="<%=  og.description %>">
-    <meta property="og:image" content="<%=        og.url %>/<%= og.image %>">
-    <meta property="og:url" content="<%=          og.url %>">
-    <% } if (twitter) { %>
-    <meta name="twitter:title" content="<%=       twitter.title %>">
-    <meta name="twitter:description" content="<%= twitter.description %>">
-    <meta name="twitter:image" content="<%=       og.url%><%= twitter.image %>">
-    <meta name="twitter:card" content="<%=        twitter.card %>">
-    <% } %>
+    <title>Säker Online</title>
+    <meta name="description" content="En sida om säkerhet på nätet.">
+    
+    <meta property="og:title" content="Säker Online">
+    <meta property="og:description" content="En sida om säkerhet på nätet.">
+    <meta property="og:image" content="https://säker.online/og-img.png">
+    <meta property="og:url" content="https://säker.online">
+    
+    <meta name="twitter:title" content="Säker Online">
+    <meta name="twitter:description" content="En sida om säkerhet på nätet.">
+    <meta name="twitter:image" content="https://säker.onlineog-img.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="imge/x-icon">
     <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
@@ -35,5 +35,5 @@
 <body>
 <a href="https://github.com/jitesoft/saeker-online"><img id="fork-me" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_green_007200.png?resize=149%2C149" alt="Fork me on GitHub"></a>
 <div id="root"></div>
-</body>
+<script type="text/javascript" src="index.js"></script></body>
 </html>
