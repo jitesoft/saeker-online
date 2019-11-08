@@ -49,7 +49,7 @@
         "title": "Säker Online",
         "template": "src/html/index.tmpl.html",
         "og": {
-            "image": "img/og-image.png",
+            "image": "og-image.png",
             "description": "En sida om säkerhet på nätet.",
             "title": "Säker Online",
             "url": "https://säker.online"
@@ -57,7 +57,7 @@
         "twitter": {
             "url": "https://säker.online",
             "card": "summary_large_image",
-            "image": "img/og-image.png",
+            "image": "og-image.png",
             "description": "En sida om säkerhet på nätet.",
             "title": "Säker Online"
         },
