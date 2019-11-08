@@ -5,12 +5,13 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  export default Vue.component('App', {
-    computed: {
-      layout () {
-        return 'default-layout';
-      }
+import Vue from 'vue';
+
+export default Vue.component('App', {
+  computed: {
+    layout () {
+      return 'default-layout';
     }
-  });
+  }
+});
 </script>

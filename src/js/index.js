@@ -4,7 +4,6 @@ import logger from '@jitesoft/yolog/browser';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 // Internal imports.
-import routeList from 'src/routes.json';
 import App from 'src/vue/App';
 import DefaultLayout from 'src/vue/Layouts/Default';
 
