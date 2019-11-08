@@ -2,6 +2,11 @@ const env = process.env.NODE_ENV === 'production' ? 'production' : 'development'
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssExtractPlugin = require('mini-css-extract-plugin');
+const FavIconsPlugin = require('favicons-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const Path = require('path');
 
 const src = Path.resolve(__dirname, 'src');
@@ -11,14 +16,17 @@ const meta = require('./package').meta;
 let conf = {
   mode: env,
   target: 'web',
-  node: {
-    fs: 'empty'
+  entry: {
+    'index': `${src}/js/index.js`
   },
-  entry: [
-    `${src}/js/index.js`
-  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   output: {
-    filename: 'index.js',
+    globalObject: 'this',
+    filename: '[name].js',
     chunkFilename: 'js/[chunkhash:16].js',
     path: Path.resolve(__dirname, 'dist')
   },
@@ -27,15 +35,28 @@ let conf = {
     extensions: ['.js', '.vue', '.json', '.css', '.scss'],
     alias: {
       '@': `${src}/Components`,
-      'src': `${src}/js`,
-      'vue$': 'vue/dist/vue.esm.js',
+      'src': `${src}`,
+      'vue$': 'vue/dist/vue.runtime.esm.js',
       'img': `${src}/img`,
       'styles': `${src}/styles`
     }
   },
   plugins: [
     new VueLoaderPlugin(),
-    new HtmlWebpackPlugin(meta)
+    new FavIconsPlugin({
+      logo: 'src/img/fav.svg',
+      prefix: 'img'
+    }),
+    new HtmlWebpackPlugin(meta),
+    new CssExtractPlugin({
+      filename: 'style.css'
+    }),
+    // To move src stuff to root!
+    new CopyPlugin([
+      'src/img/og-image.png',
+      'src/CNAME'
+    ]),
+    new CleanWebpackPlugin()
   ],
   module: {
     rules: [
@@ -59,12 +80,22 @@ let conf = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        // For some reason, this must be set here, else it will blow up later...
+        options: {
+          'presets': [
+            ['@jitesoft/main',
+              {
+                mode: 'web'
+              }
+            ]
+          ]
+        }
       },
       {
         test: /\.scss$/,
         use: [
-          'vue-style-loader',
+          process.env.NODE_ENV !== 'production' ?'vue-style-loader' : CssExtractPlugin.loader,
           'css-loader', {
             loader: 'sass-loader',
             options: {
@@ -76,25 +107,12 @@ let conf = {
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
+          process.env.NODE_ENV !== 'production' ?'vue-style-loader' : CssExtractPlugin.loader,
           'css-loader'
         ]
       },
       {
-        test: /\.(ico|png)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'img',
-              name: '[name].[ext]'
-            }
-          },
-          'image-webpack-loader'
-        ]
-      },
-      {
-        test: /\.(jpe?g|gif|svg)$/i,
+        test: /\.(jpe?g|gif|svg|png|ico)$/i,
         use: [
           {
             loader: 'url-loader',
