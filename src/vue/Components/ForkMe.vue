@@ -9,7 +9,7 @@ export default Vue.component('ForkMe', {
 
 });
 </script>
-<style scoped>
+<style lang="scss" scoped>
     #fork-me {
         position: absolute;
         top: 0;
