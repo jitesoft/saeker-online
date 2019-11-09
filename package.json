@@ -37,7 +37,8 @@
         "webpack": "^4.41.2",
         "webpack-cli": "^3.3.10",
         "webpack-dev-server": "^3.9.0",
-        "whatwg-fetch": "^3.0.0"
+        "whatwg-fetch": "^3.0.0",
+        "mini-css-extract-plugin": "^0.8.0"
     },
     "scripts": {
         "build:prod": "cross-env NODE_ENV=production webpack -p",
@@ -52,18 +53,15 @@
             "image": "og-image.png",
             "description": "En sida om säkerhet på nätet.",
             "title": "Säker Online",
-            "url": "https://säker.online"
+            "url": "https://xn--sker-loa.online/"
         },
         "twitter": {
-            "url": "https://säker.online",
+            "url": "https://xn--sker-loa.online/",
             "card": "summary_large_image",
             "image": "og-image.png",
             "description": "En sida om säkerhet på nätet.",
             "title": "Säker Online"
         },
         "description": "En sida om säkerhet på nätet."
-    },
-    "dependencies": {
-        "mini-css-extract-plugin": "^0.8.0"
     }
 }
