@@ -6,8 +6,7 @@
 <script>
 import Vue from 'vue';
 export default Vue.component('page-footer', {
-
-})
+});
 </script>
 <style lang="scss" scoped>
     footer {

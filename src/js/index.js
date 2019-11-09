@@ -5,10 +5,10 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 // Internal imports.
 import App from 'src/vue/App';
-import DefaultLayout from 'src/vue/Layouts/Default';
+import Logger from 'src/js/Plugins/Logger';
 
 Vue.use(VueRouter);
-Vue.component('default-layout', DefaultLayout);
+Vue.use(Logger);
 
 onLoad.then(() => {
   const router = new VueRouter({

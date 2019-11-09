@@ -1,5 +1,5 @@
 <template>
-    <component>
+    <div>
         <div id="page-container">
             <page-header />
             <div class="content-wrapper">
@@ -8,7 +8,7 @@
             <page-footer />
         </div>
         <fork-me></fork-me>
-    </component>
+    </div>
 </template>
 <script>
 import 'src/vue/Partials/Header';

@@ -25,6 +25,4 @@ export default Vue.component('header-menu', {});
             color: black;
         }
     }
-
-
 </style>

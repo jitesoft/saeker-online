@@ -6,7 +6,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import Menu from 'src/vue/Components/HeaderMenu';
+import 'src/vue/Components/HeaderMenu';
 export default Vue.component('page-header', {
 });
 </script>
