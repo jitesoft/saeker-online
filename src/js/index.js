@@ -18,6 +18,10 @@ onLoad.then(() => {
         path: '/',
         // For code split we use a promise here to import dynamically.
         component: () => Promise.resolve(import('src/vue/Pages/Index'))
+      },
+      {
+        path: '/om-sidan',
+        component: () => Promise.resolve(import('src/vue/Pages/About'))
       }
     ]
   });
