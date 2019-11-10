@@ -16,7 +16,7 @@ export default Vue.component('page-header', {
         width: 70%;
         font-family: Averia, serif;
         left: 15%;
-        min-height: 8vh;
+        height: 12vh;
 
         h1 {
             text-align: center;

@@ -20,13 +20,14 @@ export default Vue.component('default-layout', {
 </script>
 <style lang="scss" scoped>
     #page-container {
-        min-height: 97vh;
-        height: fit-content;
-        position: relative;
-        padding-bottom: 1vh;
     }
 
     .content-wrapper {
-        padding: 8vh 3vw 1vh;
+        padding: 0 3vw;
+        top: 13vh;
+        position: absolute;
+        width: 60%;
+        left: 20%;
+        min-height: 75vh;
     }
 </style>

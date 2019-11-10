@@ -1,6 +1,8 @@
 <template>
     <component :is="this.layout">
-        <router-view></router-view>
+        <div class="inner-content">
+            <router-view></router-view>
+        </div>
     </component>
 </template>
 
@@ -15,3 +17,4 @@ export default Vue.component('App', {
   }
 });
 </script>
+

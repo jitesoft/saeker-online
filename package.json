@@ -63,5 +63,8 @@
             "title": "Säker Online"
         },
         "description": "En sida om säkerhet på nätet."
+    },
+    "dependencies": {
+        "vue-showdown": "^2.4.1"
     }
 }

@@ -3,14 +3,19 @@ import onLoad from '@jitesoft/on-load';
 import logger from '@jitesoft/yolog/browser';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import ShowDown from 'vue-showdown';
 // Internal imports.
 import App from 'src/vue/App';
 import Logger from 'src/js/Plugins/Logger';
 
 Vue.use(VueRouter);
 Vue.use(Logger);
+Vue.use(ShowDown, {
+  flavor: 'github'
+});
 
 onLoad.then(() => {
+
   const router = new VueRouter({
     mode: 'history',
     routes: [

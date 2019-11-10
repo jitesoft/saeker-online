@@ -13,6 +13,28 @@ const src = Path.resolve(__dirname, 'src');
 const dist = Path.resolve(__dirname, 'dist');
 const meta = require('./package').meta;
 
+const plugins = [
+  new VueLoaderPlugin(),
+  new FavIconsPlugin({
+    logo: 'src/img/fav.svg',
+    prefix: 'img'
+  }),
+  new HtmlWebpackPlugin(meta),
+  new CssExtractPlugin({
+    filename: 'style.css'
+  }),
+  // To move src stuff to root!
+  new CopyPlugin([
+    'src/img/og-image.png',
+    'src/CNAME',
+    {from: 'src/content', to: 'content' }
+  ])
+];
+
+if (env === 'production') {
+  plugins.push(new CleanWebpackPlugin());
+}
+
 let conf = {
   mode: env,
   target: 'web',
@@ -36,28 +58,13 @@ let conf = {
     alias: {
       '@': `${src}/Components`,
       'src': `${src}`,
+      'vue-showdown$': 'vue-showdown/dist/vue-showdown.esm.js',
       'vue$': 'vue/dist/vue.runtime.esm.js',
       'img': `${src}/img`,
       'styles': `${src}/styles`
     }
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new FavIconsPlugin({
-      logo: 'src/img/fav.svg',
-      prefix: 'img'
-    }),
-    new HtmlWebpackPlugin(meta),
-    new CssExtractPlugin({
-      filename: 'style.css'
-    }),
-    // To move src stuff to root!
-    new CopyPlugin([
-      'src/img/og-image.png',
-      'src/CNAME'
-    ]),
-    new CleanWebpackPlugin()
-  ],
+  plugins: plugins,
   module: {
     rules: [
       {
@@ -107,7 +114,7 @@ let conf = {
       {
         test: /\.css$/,
         use: [
-          process.env.NODE_ENV !== 'production' ?'vue-style-loader' : CssExtractPlugin.loader,
+          process.env.NODE_ENV !== 'production' ? 'vue-style-loader' : CssExtractPlugin.loader,
           'css-loader'
         ]
       },
@@ -123,6 +130,18 @@ let conf = {
             }
           },
           'image-webpack-loader'
+        ]
+      },
+      {
+        test: /\.md$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'content',
+              name: '[name].[ext]'
+            }
+          }
         ]
       }
     ]
