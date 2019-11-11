@@ -19,6 +19,7 @@ jobs:
           npm ci
           npm test
           npm run build:prod
+          npx yarn licenses generate-disclaimer > dist/licenses.txt
         env:
           CI: true
           NODE_ENV: development # To ensure dev packages install.
