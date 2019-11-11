@@ -15,7 +15,6 @@ Vue.use(ShowDown, {
 });
 
 onLoad.then(() => {
-
   const router = new VueRouter({
     mode: 'history',
     routes: [

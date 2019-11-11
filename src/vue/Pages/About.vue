@@ -8,7 +8,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { VueShowdown } from 'vue-showdown';
+import 'vue-showdown';
 export default Vue.component('About', {
   props: {
     lang: {
@@ -16,7 +16,7 @@ export default Vue.component('About', {
       default: 'swe'
     }
   },
-  mounted: function() {
+  mounted: function () {
     fetch(`content/about/about.${this.lang}.md`).then(r => r.text()).then(result => {
       this.content = result;
     });
@@ -24,7 +24,7 @@ export default Vue.component('About', {
   data: function () {
     return {
       content: ''
-    }
+    };
   }
 });
 </script>
