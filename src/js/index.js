@@ -7,6 +7,7 @@ import ShowDown from 'vue-showdown';
 // Internal imports.
 import App from 'src/vue/App';
 import Logger from 'src/js/Plugins/Logger';
+import Routes from 'src/routes';
 
 Vue.use(VueRouter);
 Vue.use(Logger);
@@ -19,30 +20,21 @@ Vue.use(ShowDown, {
 });
 
 onLoad.then(() => {
+  const routerRoutes = [];
+  for (const route of Object.keys(Routes)) {
+    for (const lang of Object.keys(Routes[route])) {
+      routerRoutes.push({
+        name: route,
+        lang: lang,
+        path: Routes[route][lang].path,
+        component: () => Promise.resolve(import('src/vue/Pages/Page'))
+      });
+    }
+  }
+
   const router = new VueRouter({
     mode: 'history',
-    routes: [
-      {
-        path: '/',
-        // For code split we use a promise here to import dynamically.
-        component: () => Promise.resolve(import('src/vue/Pages/Page'))
-      },
-      {
-        path: '/om-sidan',
-        name: 'about',
-        component: () => Promise.resolve(import('src/vue/Pages/Page'))
-      },
-      {
-        path: '/social-säkerhet',
-        name: 'social-safety',
-        component: () => Promise.resolve(import('src/vue/Pages/Page'))
-      },
-      {
-        path: '/it-säkerhet',
-        name: 'it-security',
-        component: () => Promise.resolve(import('src/vue/Pages/Page'))
-      }
-    ]
+    routes: routerRoutes
   });
 
   new Vue({

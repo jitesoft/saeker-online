@@ -1,0 +1,26 @@
+{
+  "home": {
+    "swe": {
+      "title": "Säker Online",
+      "path": "/"
+    }
+  },
+  "about": {
+    "swe": {
+      "title": "Om Säker Online",
+      "path": "/om-sidan"
+    }
+  },
+  "social-safety": {
+    "swe": {
+      "title": "Social Säkerhet",
+      "path": "/social-säkerhet"
+    }
+  },
+  "it-security": {
+    "swe": {
+      "title": "IT-Säkerhet",
+      "path": "/it-säkerhet"
+    }
+  }
+}

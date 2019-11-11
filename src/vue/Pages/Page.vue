@@ -25,7 +25,7 @@ export default Vue.component('Page', {
     fetchData: function () {
       this.content = null;
       this.$logger.debug('Loading page: %s', this.$route.name);
-      fetch(`content/${this.$route.name ?? 'home'}/index.swe.md`)
+      fetch(`content/${this.$route.name ?? 'home'}/index.${this.lang}.md`)
         .then(r => r.text())
         .then(r => {
           this.content = r;
