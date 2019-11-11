@@ -20,10 +20,11 @@ export default Vue.component('default-layout', {
 </script>
 <style lang="scss" scoped>
     .content-wrapper {
-        min-height: calc(100vh - 3em - 8em);
         position: relative;
         width: 60%;
         left: 20%;
         font-size: 1em;
+        padding-bottom: 2rem;
+        min-height: 65vh;
     }
 </style>

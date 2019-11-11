@@ -11,7 +11,7 @@ export default Vue.component('page-footer', {
 <style lang="scss" scoped>
     footer {
         position: relative;
-        height: 3em;
+        padding: 2rem;
         left: 10%;
         width: 80%;
         text-align: center;

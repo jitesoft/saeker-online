@@ -11,7 +11,11 @@ import Logger from 'src/js/Plugins/Logger';
 Vue.use(VueRouter);
 Vue.use(Logger);
 Vue.use(ShowDown, {
-  flavor: 'github'
+  flavor: 'github',
+  options: {
+    headerLevelStart: 3,
+    metadata: true
+  }
 });
 
 onLoad.then(() => {
@@ -21,7 +25,7 @@ onLoad.then(() => {
       {
         path: '/',
         // For code split we use a promise here to import dynamically.
-        component: () => Promise.resolve(import('src/vue/Pages/Index'))
+        component: () => Promise.resolve(import('src/vue/Pages/Page'))
       },
       {
         path: '/om-sidan',
