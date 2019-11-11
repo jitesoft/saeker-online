@@ -27,6 +27,7 @@ const plugins = [
   new CopyPlugin([
     'src/img/og-image.png',
     'src/CNAME',
+    'src/html/404.html',
     {from: 'src/content', to: 'content' }
   ])
 ];

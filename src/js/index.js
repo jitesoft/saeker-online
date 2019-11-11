@@ -25,7 +25,9 @@ onLoad.then(() => {
     for (const lang of Object.keys(Routes[route])) {
       routerRoutes.push({
         name: route,
-        lang: lang,
+        meta: {
+          lang: lang
+        },
         path: Routes[route][lang].path,
         component: () => Promise.resolve(import('src/vue/Pages/Page'))
       });
