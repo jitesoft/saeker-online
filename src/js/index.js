@@ -25,7 +25,18 @@ onLoad.then(() => {
       },
       {
         path: '/om-sidan',
-        component: () => Promise.resolve(import('src/vue/Pages/About'))
+        name: 'about',
+        component: () => Promise.resolve(import('src/vue/Pages/Page'))
+      },
+      {
+        path: '/social-säkerhet',
+        name: 'social-safety',
+        component: () => Promise.resolve(import('src/vue/Pages/Page'))
+      },
+      {
+        path: '/it-säkerhet',
+        name: 'it-security',
+        component: () => Promise.resolve(import('src/vue/Pages/Page'))
       }
     ]
   });

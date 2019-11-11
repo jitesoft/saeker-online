@@ -1,7 +1,9 @@
 <template>
     <ul>
         <li><router-link to="/">Hem</router-link></li>
-        <li><router-link to="/om-sidan">Om sidan</router-link></li>
+        <li><router-link :to="{name: 'about', lang: 'swe'}">Om sidan</router-link></li>
+        <li><router-link :to="{name: 'social-safety', lang: 'swe'}">Social Säkerhet</router-link></li>
+        <li><router-link :to="{name: 'it-security', lang: 'swe'}">IT-Säkerhet</router-link></li>
     </ul>
 </template>
 <script>
