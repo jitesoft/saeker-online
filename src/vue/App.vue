@@ -16,3 +16,14 @@ export default Vue.component('App', {
   }
 });
 </script>
+<style lang="scss">
+    :root {
+        @include fluid-type(
+            $minWidth,
+            $maxWidth,
+            $minFontSize,
+            $maxFontSize,
+            $minLineHeight
+        );
+    }
+</style>

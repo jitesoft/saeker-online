@@ -10,12 +10,12 @@ export default Vue.component('page-footer', {
 </script>
 <style lang="scss" scoped>
     footer {
-        position: absolute;
+        position: relative;
         height: 3em;
-        bottom: 0;
         left: 10%;
         width: 80%;
         text-align: center;
+        font-size: 0.7em;
     }
 
     a {

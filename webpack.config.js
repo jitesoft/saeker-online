@@ -60,8 +60,7 @@ let conf = {
       'src': `${src}`,
       'vue-showdown$': 'vue-showdown/dist/vue-showdown.esm.js',
       'vue$': 'vue/dist/vue.runtime.esm.js',
-      'img': `${src}/img`,
-      'styles': `${src}/styles`
+      'img': `${src}/img`
     }
   },
   plugins: plugins,
@@ -106,6 +105,8 @@ let conf = {
           'css-loader', {
             loader: 'sass-loader',
             options: {
+              prependData: `@import "src/styles/_variables.scss";
+                     @import "src/styles/_mixins.scss";`,
               implementation: require('sass')
             }
           }

@@ -10,15 +10,14 @@ export default Vue.component('header-menu', {});
 </script>
 <style lang="scss" scoped>
     ul {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 70%;
+        height: 1.5em;
+        justify-content: space-evenly;
         list-style-type: none;
         max-height: 2vh;
         margin: auto;
-
-        li {
-            float: left;
-            padding-left: 2em;
-            padding-right: 2em;
-        }
 
         a {
             text-decoration: none;

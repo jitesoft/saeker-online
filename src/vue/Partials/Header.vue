@@ -12,14 +12,15 @@ export default Vue.component('page-header', {
 </script>
 <style lang="scss" scoped>
     header {
-        position: absolute;
         width: 70%;
         font-family: Averia, serif;
-        left: 15%;
-        height: 12vh;
+        transform: translateX(20%);
+        height: 6em;
+        font-size: 1em;
 
         h1 {
             text-align: center;
+            font-size: 2em;
         }
     }
 </style>

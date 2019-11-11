@@ -19,15 +19,11 @@ export default Vue.component('default-layout', {
 });
 </script>
 <style lang="scss" scoped>
-    #page-container {
-    }
-
     .content-wrapper {
-        padding: 0 3vw;
-        top: 13vh;
-        position: absolute;
+        min-height: calc(100vh - 3em - 8em);
+        position: relative;
         width: 60%;
         left: 20%;
-        min-height: 75vh;
+        font-size: 1em;
     }
 </style>
